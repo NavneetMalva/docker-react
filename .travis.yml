@@ -1,10 +1,11 @@
-language:generic
-sudo: required 
+sudo: required
+language: generic
+
 services:
   - docker
 
 before_install:
-  - docker build -t navneet/docker-react -f Dockerfile.dev .
+  - docker build -t stephengrider/docker-react -f Dockerfile.dev .
 
-script: 
-  - docker run -e CI=true navneet/docker-react npm run test
+script:
+  - docker run -e CI=true stephengrider/docker-react npm run test
